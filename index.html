@@ -6,21 +6,21 @@
     <title>Hi Shristika!</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
             padding: 20px;
-            transition: background 2s ease-in-out;
             background-size: 400% 400%;
-            animation: gradient 10s ease infinite;
+            animation: gradient 8s ease infinite;
             overflow: hidden;
+            position: relative;
         }
 
         h1 {
             font-size: 4rem;
-            color: #fff;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            animation: bounce 2s infinite;
+            color: #D5006D; /* Dark Pink Color */
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            animation: bounce 1s ease-in-out infinite;
+            margin-top: 20px;
         }
 
         .button-container {
@@ -31,19 +31,19 @@
             display: inline-block;
             margin: 10px;
             padding: 15px 30px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            color: #fff;
-            background-color: #ff6f61;
+            color: white;
+            background-color: #ff9f00;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, background-color 0.3s;
         }
 
         .button:hover {
-            background-color: #ff8e72;
+            background-color: #ffbf00;
             transform: scale(1.1);
         }
 
@@ -51,7 +51,28 @@
             transform: scale(0.95);
         }
 
-        /* Heart Animation */
+        /* Confetti animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            animation: confettiFall 3s ease-out forwards;
+            border-radius: 50%;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Heart animation */
         .heart {
             position: absolute;
             width: 20px;
@@ -76,38 +97,22 @@
             }
         }
 
-        /* Ball animation for smile */
-        .ball {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.8);
-            animation: ballAnimation 2s ease-in-out infinite;
-        }
-
-        @keyframes ballAnimation {
-            0% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-50px) scale(1.2);
-            }
-            100% {
-                transform: translateY(0) scale(1);
-            }
-        }
-
         /* Background gradient animation */
         @keyframes gradient {
             0% {
-                background-position: 0% 50%;
+                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            }
+            25% {
+                background: linear-gradient(135deg, #fbc2eb, #a1c4fd);
             }
             50% {
-                background-position: 100% 50%;
+                background: linear-gradient(135deg, #cfd9df, #c3cfe2);
+            }
+            75% {
+                background: linear-gradient(135deg, #84fab0, #8fd3f4);
             }
             100% {
-                background-position: 0% 50%;
+                background: linear-gradient(135deg, #ffecd2, #fcb69f);
             }
         }
 
@@ -120,40 +125,117 @@
             }
         }
 
-        /* Confetti animation */
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ff0;
-            animation: confettiFall 2s ease-in-out forwards;
+        /* Message box style */
+        .message-box {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #fcb7d7, #f7b6c7);
+            color: darkpink;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 1s ease-out forwards;
         }
 
-        @keyframes confettiFall {
+        @keyframes fadeIn {
             0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 1;
+                opacity: 0;
+                transform: translateY(-20px);
             }
             100% {
-                transform: translateY(100vh) rotate(360deg);
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Message for smile */
+        .smile-message {
+            display: none;
+            font-size: 1.5rem;
+            color: #ff00ff; /* Pink color for the smile message */
+            font-weight: bold;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Ball Animation */
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: ballAnimation 1.5s ease-in-out forwards;
+        }
+
+        @keyframes ballAnimation {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-30px) scale(1.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(0) scale(1);
                 opacity: 0;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Hi Shristika!💗</h1>
+    <h1>Hi Shristika! 💗</h1>
 
     <div class="button-container">
-        <button class="button" onclick="showMessage('😄😄Smile, Shristika!')">Smile</button>
-        <button class="button" onclick="showMessage('❤️❤️ Lots of love, Shristika!')">Hearts</button>
+        <button class="button" onclick="showBalls()">Smile</button>
+        <button class="button" onclick="showHearts()">Hearts</button>
         <button class="button" onclick="showConfetti()">Celebrate!</button>
         <button class="button" onclick="changeColor()">Change Background</button>
     </div>
 
-    <p id="message" style="font-size: 1.5rem; color: #fff; margin-top: 20px;"></p>
+    <!-- Heartfelt message box -->
+    <div id="message-box" class="message-box">
+        <p>I feel truly blessed to have you in my life. Your kindness, support, and unwavering presence have made all the difference. You are a true gift, and I am so grateful for everything you’ve done for me. Thank you for being such an amazing friend and for bringing so much light and meaning into my life. 
+        <br> Lots of Love 💗💗💗.
+        <br> Atharva</p>
+    </div>
+
+    <!-- Smile message -->
+    <p id="smile-message" class="smile-message">Smile Shristika! 😊</p>
+
+    <p id="message" style="font-size: 1.5rem; color: #fffc00; margin-top: 20px;"></p>
 
     <script>
+        function showBalls() {
+            for (let i = 0; i < 30; i++) {
+                const ball = document.createElement('div');
+                ball.classList.add('ball');
+                ball.style.left = Math.random() * 100 + 'vw';
+                ball.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                ball.style.animationDuration = Math.random() * 2 + 1 + 's';
+                document.body.appendChild(ball);
+                setTimeout(() => ball.remove(), 3000); // Remove ball after animation
+            }
+            showSmileMessage();
+        }
+
+        function showHearts() {
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 2000); // Remove heart after animation
+            }
+            showHeartsMessage();
+        }
+
         function showMessage(text) {
             document.getElementById('message').innerText = text;
         }
@@ -164,7 +246,7 @@
                 confetti.classList.add('confetti');
                 confetti.style.left = Math.random() * 100 + 'vw';
                 confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
-                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.animationDuration = Math.random() * 2 + 1 + 's';
                 document.body.appendChild(confetti);
                 setTimeout(() => confetti.remove(), 3000); // Remove confetti after animation
             }
@@ -182,30 +264,16 @@
             document.body.style.background = gradients[Math.floor(Math.random() * gradients.length)];
         }
 
-        // Heart animation for hearts button
-        document.querySelectorAll('.button')[1].addEventListener('click', function() {
-            for (let i = 0; i < 10; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('heart');
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.top = Math.random() * 100 + 'vh';
-                document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 1500); // Remove heart after animation
-            }
-        });
+        function showSmileMessage() {
+            document.getElementById('smile-message').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('smile-message').style.display = 'none';
+            }, 3000); // Hide the smile message after 3 seconds
+        }
 
-        // Ball animation for smile button
-        document.querySelectorAll('.button')[0].addEventListener('click', function() {
-            for (let i = 0; i < 10; i++) {
-                const ball = document.createElement('div');
-                ball.classList.add('ball');
-                ball.style.left = Math.random() * 100 + 'vw';
-                ball.style.top = Math.random() * 100 + 'vh';
-                ball.style.animationDuration = Math.random() * 2 + 1 + 's'; // Randomize animation duration
-                document.body.appendChild(ball);
-                setTimeout(() => ball.remove(), 2000); // Remove ball after animation
-            }
-        });
+        function showHeartsMessage() {
+            document.getElementById('message-box').style.display = 'block';
+        }
     </script>
 </body>
 </html>
