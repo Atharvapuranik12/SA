@@ -10,7 +10,7 @@
             text-align: center;
             padding: 20px;
             background-size: 400% 400%;
-            animation: gradient 8s ease infinite;
+            animation: gradient 10s ease infinite;
             overflow: hidden;
             position: relative;
         }
@@ -97,22 +97,22 @@
             }
         }
 
-        /* Background gradient animation */
+        /* Background gradient animation with baby colors */
         @keyframes gradient {
             0% {
-                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+                background: linear-gradient(135deg, #E6E6FA, #FFB6C1); /* Lavender to Baby Pink */
             }
             25% {
-                background: linear-gradient(135deg, #fbc2eb, #a1c4fd);
+                background: linear-gradient(135deg, #B3E5FC, #FFCDD2); /* Light Blue to Soft Pink */
             }
             50% {
-                background: linear-gradient(135deg, #cfd9df, #c3cfe2);
+                background: linear-gradient(135deg, #D1C4E9, #F8BBD0); /* Lavender to Light Pink */
             }
             75% {
-                background: linear-gradient(135deg, #84fab0, #8fd3f4);
+                background: linear-gradient(135deg, #F0F4C3, #F5E1D0); /* Light Yellow to Pale Pink */
             }
             100% {
-                background: linear-gradient(135deg, #ffecd2, #fcb69f);
+                background: linear-gradient(135deg, #E8EAF6, #FFCCBC); /* Light Lavender to Peachy Pink */
             }
         }
 
@@ -254,12 +254,11 @@
 
         function changeColor() {
             const gradients = [
-                'linear-gradient(135deg, #ff9a9e, #fad0c4)',
-                'linear-gradient(135deg, #fbc2eb, #a1c4fd)',
-                'linear-gradient(135deg, #cfd9df, #c3cfe2)',
-                'linear-gradient(135deg, #84fab0, #8fd3f4)',
-                'linear-gradient(135deg, #ffecd2, #fcb69f)',
-                'linear-gradient(135deg, #a1c4fd, #c2e9fb)'
+                'linear-gradient(135deg, #E6E6FA, #FFB6C1)', /* Lavender to Baby Pink */
+                'linear-gradient(135deg, #B3E5FC, #FFCDD2)', /* Light Blue to Soft Pink */
+                'linear-gradient(135deg, #D1C4E9, #F8BBD0)', /* Lavender to Light Pink */
+                'linear-gradient(135deg, #F0F4C3, #F5E1D0)', /* Light Yellow to Pale Pink */
+                'linear-gradient(135deg, #E8EAF6, #FFCCBC)', /* Light Lavender to Peachy Pink */
             ];
             document.body.style.background = gradients[Math.floor(Math.random() * gradients.length)];
         }
